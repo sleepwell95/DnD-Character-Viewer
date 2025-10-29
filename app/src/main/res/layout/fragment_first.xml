@@ -119,7 +119,7 @@
                 android:id="@+id/strLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="STR"
+                android:text="STRENGTH"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
 
@@ -144,7 +144,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DEX"
+                android:text="DEXTERITY"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
 
@@ -169,7 +169,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CON"
+                android:text="CONSTITUTION"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
 
@@ -194,7 +194,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="INT"
+                android:text="INTELLIGENCE"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
 
@@ -220,7 +220,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WIS"
+                android:text="WISDOM"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
 
@@ -246,7 +246,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CHA"
+                android:text="CHARISMA"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
 
