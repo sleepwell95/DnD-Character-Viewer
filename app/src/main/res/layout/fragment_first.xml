@@ -261,7 +261,173 @@
         </LinearLayout>
     </GridLayout>
 
+    <!--  Saving throws section  -->
+    <TextView
+        android:id="@+id/savingThrowsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saving Throws"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/quickAbilitiesStats"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- 2 columns, 3 rows;" -->
+    <GridLayout
+        android:id="@+id/savingThrowsGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignMargins"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/savingThrowsHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Row 1: STR & INT -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/strSaveLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="STRENGTH"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/strSaveVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/intSaveLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="INTELLIGENCE"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/intSaveVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Row 2: DEX & WIS -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/dexSaveLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DEXTERITY"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/dexSaveVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/wisSaveLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WISDOM"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/wisSaveVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Row 3: CON & CHA -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/conSaveLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CONSTITUTION"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/conSaveVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+            <TextView
+                android:id="@+id/chaSaveLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CHARISMA"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/chaSaveVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </GridLayout>
 
 
 

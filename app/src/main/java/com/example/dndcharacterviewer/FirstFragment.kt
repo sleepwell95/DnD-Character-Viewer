@@ -14,9 +14,10 @@ class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
 
-    // === helpers at CLASS level (private is valid here) ===
+    // === helpers at CLASS level ===
     private fun fmtMod(n: Int): String = if (n >= 0) "+$n" else "$n"
-    private fun abilityMod(score: Int): Int = floor((score - 10) / 2.0).toInt()
+//    private fun abilityMod(score: Int): Int = floor((score - 10) / 2.0).toInt()
+    private fun proficiencyBonus(level: Int) = 2 + ((maxOf(level, 1) - 1) / 4)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,14 +60,24 @@ class FirstFragment : Fragment() {
         val wis = abilities?.optInt("wis") ?: 0
         val cha = abilities?.optInt("cha") ?: 0
 
-        //Abilities bonuses stats
+        //Abilities bonuses values
         val abilitiesBonus = abilitiesBlock?.optJSONObject("bonuses")
-        val str_bonus = abilitiesBonus?.optInt("str") ?: 0
-        val dex_bonus = abilitiesBonus?.optInt("dex") ?: 0
-        val con_bonus = abilitiesBonus?.optInt("con") ?: 0
-        val int_bonus = abilitiesBonus?.optInt("int") ?: 0
-        val wis_bonus = abilitiesBonus?.optInt("wis") ?: 0
-        val cha_bonus = abilitiesBonus?.optInt("cha") ?: 0
+        val strBonus = abilitiesBonus?.optInt("str") ?: 0
+        val dexBonus = abilitiesBonus?.optInt("dex") ?: 0
+        val conBonus = abilitiesBonus?.optInt("con") ?: 0
+        val intBonus = abilitiesBonus?.optInt("int") ?: 0
+        val wisBonus = abilitiesBonus?.optInt("wis") ?: 0
+        val chaBonus = abilitiesBonus?.optInt("cha") ?: 0
+
+        //Saving throws values
+        val saveBonuses = character.optJSONObject("save_bonuses")
+        val strSave = saveBonuses?.optInt("str")
+        val dexSave = saveBonuses?.optInt("dex")
+        val conSave = saveBonuses?.optInt("con")
+        val intSave = saveBonuses?.optInt("int")
+        val wisSave = saveBonuses?.optInt("wis")
+        val chaSave = saveBonuses?.optInt("cha")
+
         // Class/Level
         val classes = character.optJSONObject("classes")?.optJSONObject("blood-hunter")
         val className = classes?.optString("class-name", "Class") ?: "Class"
@@ -88,16 +99,24 @@ class FirstFragment : Fragment() {
         binding.speedVal.text = "Speed: $speed"
         binding.initiativeVal.text = "Init: $initiativemax"
         binding.abilitiesLineHeader.text = "Abilities"
-        //Abilities ,bonuses binding
-//        binding.abilitiesLine.text = "STR $str  DEX $dex  CON $con  INT $int_  WIS $wis  CHA $cha"
 
-// Display both value and modifier together, e.g. "16 (+3)"
-        binding.strVal.text = "${str} (${fmtMod(str_bonus)})"
-        binding.dexVal.text = "${dex} (${fmtMod(dex_bonus)})"
-        binding.conVal.text = "${con} (${fmtMod(con_bonus)})"
-        binding.intVal.text = "${int_} (${fmtMod(int_bonus)})"
-        binding.wisVal.text = "${wis} (${fmtMod(wis_bonus)})"
-        binding.chaVal.text = "${cha} (${fmtMod(cha_bonus)})"
+        //Abilities ,bonuses binding
+        // Display both value and modifier together,"16 (+3)"
+        binding.strVal.text = "${str} (${fmtMod(strBonus)})"
+        binding.dexVal.text = "${dex} (${fmtMod(dexBonus)})"
+        binding.conVal.text = "${con} (${fmtMod(conBonus)})"
+        binding.intVal.text = "${int_} (${fmtMod(intBonus)})"
+        binding.wisVal.text = "${wis} (${fmtMod(wisBonus)})"
+        binding.chaVal.text = "${cha} (${fmtMod(chaBonus)})"
+
+        //Saving throws binding
+        binding.strSaveVal.text = "$strSave"
+        binding.dexSaveVal.text = "$dexSave"
+        binding.conSaveVal.text = "$conSave"
+        binding.intSaveVal.text = "$intSave"
+        binding.wisSaveVal.text = "$wisSave"
+        binding.chaSaveVal.text = "$chaSave"
+
 
 
 
