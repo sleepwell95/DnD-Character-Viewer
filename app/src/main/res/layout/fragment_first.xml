@@ -91,73 +91,176 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Abilities -->
-    <LinearLayout
+    <!-- Abilities (3 columns x 2 rows) -->
+    <GridLayout
         android:id="@+id/quickAbilitiesStats"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="6"
         android:layout_marginTop="12dp"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true"
         app:layout_constraintTop_toBottomOf="@id/abilitiesLineHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/strVal"
+        <!-- STR -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="STR 16"
-            android:gravity="end"
-            android:textStyle="bold"/>
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp">
 
-        <TextView
-            android:id="@+id/dexVal"
+            <TextView
+                android:id="@+id/strLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STR"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/strVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="16 (+3)"/>
+        </LinearLayout>
+
+        <!-- DEX -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="DEX 12"
-            android:gravity="end"
-            android:textStyle="bold"/>
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp">
 
-        <TextView
-            android:id="@+id/conVal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEX"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dexVal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="12 (+1)"/>
+        </LinearLayout>
+
+        <!-- CON -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="CON 16"
-            android:gravity="end"
-            android:textStyle="bold"/>
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp">
 
-        <TextView
-            android:id="@+id/intVal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CON"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/conVal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="16 (+3)"/>
+        </LinearLayout>
+
+        <!-- INT -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="INT 16"
-            android:gravity="end"
-            android:textStyle="bold"/>
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp">
 
-        <TextView
-            android:id="@+id/wisVal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INT"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/intVal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="16 (+3)"/>
+
+        </LinearLayout>
+
+        <!-- WIS -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="WIS 10"
-            android:gravity="end"
-            android:textStyle="bold"/>
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp">
 
-        <TextView
-            android:id="@+id/chaVal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WIS"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/wisVal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="10 (+0)"/>
+
+        </LinearLayout>
+
+        <!-- CHA -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="CHA 8"
-            android:gravity="end"
-            android:textStyle="bold"/>
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="4dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHA"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chaVal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="8 (-1)"/>
+
+        </LinearLayout>
+    </GridLayout>
+
 
 
 

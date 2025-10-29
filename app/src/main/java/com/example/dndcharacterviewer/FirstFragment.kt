@@ -7,11 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.dndcharacterviewer.databinding.FragmentFirstBinding
 import org.json.JSONObject
+import kotlin.math.floor
 
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+
+    // === helpers at CLASS level (private is valid here) ===
+    private fun fmtMod(n: Int): String = if (n >= 0) "+$n" else "$n"
+    private fun abilityMod(score: Int): Int = floor((score - 10) / 2.0).toInt()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -85,13 +90,15 @@ class FirstFragment : Fragment() {
         binding.abilitiesLineHeader.text = "Abilities"
         //Abilities ,bonuses binding
 //        binding.abilitiesLine.text = "STR $str  DEX $dex  CON $con  INT $int_  WIS $wis  CHA $cha"
-        binding.strVal.text = "STR: $str"
-        binding.dexVal.text = "DEX: $dex"
-        binding.conVal.text = "CON: $con"
-        binding.intVal.text = "INT: $int_"
-        binding.wisVal.text = "WIS: $wis"
-        binding.chaVal.text = "CHA: $cha"
-//        binding.abilitiesBonusLine.text = "STR $str_bonus  DEX $dex_bonus  CON $con_bonus  INT $int_bonus  WIS $wis_bonus  CHA $cha_bonus"
+
+// Display both value and modifier together, e.g. "16 (+3)"
+        binding.strVal.text = "${str} (${fmtMod(str_bonus)})"
+        binding.dexVal.text = "${dex} (${fmtMod(dex_bonus)})"
+        binding.conVal.text = "${con} (${fmtMod(con_bonus)})"
+        binding.intVal.text = "${int_} (${fmtMod(int_bonus)})"
+        binding.wisVal.text = "${wis} (${fmtMod(wis_bonus)})"
+        binding.chaVal.text = "${cha} (${fmtMod(cha_bonus)})"
+
 
 
     }
