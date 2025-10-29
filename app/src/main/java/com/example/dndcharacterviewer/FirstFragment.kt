@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.dndcharacterviewer.databinding.FragmentFirstBinding
 import org.json.JSONObject
-import kotlin.math.floor
+
 
 class FirstFragment : Fragment() {
 
@@ -16,8 +16,7 @@ class FirstFragment : Fragment() {
 
     // === helpers at CLASS level ===
     private fun fmtMod(n: Int): String = if (n >= 0) "+$n" else "$n"
-//    private fun abilityMod(score: Int): Int = floor((score - 10) / 2.0).toInt()
-    private fun proficiencyBonus(level: Int) = 2 + ((maxOf(level, 1) - 1) / 4)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,8 +29,8 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Load sample DMV JSON from assets
-        val json = requireContext().assets.open("sample/cinder.json").bufferedReader().use { it.readText() }
+        // Load sample DMV JSON from assets, hardcoded for now
+        val json = requireContext().assets.open("cinder.json").bufferedReader().use { it.readText() }
         val root = JSONObject(json)
 
         // DMV structure: character is an array; we take the first character
@@ -79,9 +78,10 @@ class FirstFragment : Fragment() {
         val chaSave = saveBonuses?.optInt("cha")
 
         // Class/Level
+        // TODO: Needs fixing - does not work with other JSON files
         val classes = character.optJSONObject("classes")?.optJSONObject("blood-hunter")
         val className = classes?.optString("class-name", "Class") ?: "Class"
-        val subclass = classes?.optString("subclass-name", null)
+        val subclass = classes?.optString("subclass-name", "none")
         val level = classes?.optInt("class-level", 0) ?: 0
         val classLine = buildString {
             append(className)
@@ -91,8 +91,9 @@ class FirstFragment : Fragment() {
 
         //Senses section
         val passivePerception = character?.optInt("passive_perception")
-        val passiveInvestigation = 18
-        val passiveInsight = 15
+        val passiveInvestigation = 18 //hardcoded for now
+        val passiveInsight = 15 //hardcoded for now
+
 
 
         // Bind to views
