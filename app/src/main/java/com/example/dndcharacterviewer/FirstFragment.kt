@@ -89,6 +89,11 @@ class FirstFragment : Fragment() {
             append(" — L").append(level)
         }
 
+        //Senses section
+        val passivePerception = character?.optInt("passive_perception")
+        val passiveInvestigation = 18
+        val passiveInsight = 15
+
 
         // Bind to views
         //Basic vals binding
@@ -116,6 +121,13 @@ class FirstFragment : Fragment() {
         binding.intSaveVal.text = "$intSave"
         binding.wisSaveVal.text = "$wisSave"
         binding.chaSaveVal.text = "$chaSave"
+
+        //Senses binding
+        binding.ppVal.text = "$passivePerception"
+        binding.piVal.text = "$passiveInvestigation"
+        binding.psiVal.text = "$passiveInsight"
+
+
 
 
 
