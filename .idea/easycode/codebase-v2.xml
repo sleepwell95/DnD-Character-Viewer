@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/app/src/androidTest/java/com/example/dndcharacterviewer/ExampleInstrumentedTest.kt;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/src/main/assets/cinder.json;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/src/main/assets/hummer.json;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/src/main/java/com/example/dndcharacterviewer/FirstFragment.kt;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/src/main/java/com/example/dndcharacterviewer/MainActivity.kt;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/src/main/java/com/example/dndcharacterviewer/SecondFragment.kt;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/src/test/java/com/example/dndcharacterviewer/ExampleUnitTest.kt;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/app/build.gradle.kts;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/build.gradle.kts;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/README.md;C:/Users/User/AndroidStudioProjects/DnDCharacterViewer/settings.gradle.kts" />
+  </component>
+</project>
